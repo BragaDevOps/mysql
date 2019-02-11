@@ -20,7 +20,7 @@ class AuthenticateCommand extends AbstractCommand
     public function __construct($user, $passwd, $dbname)
     {
         $this->user = $user;
-        $this->passwd = $passwd;
+        $this->passwd = addslashes(rawurldecode($passwd));
         $this->dbname = $dbname;
     }
 
